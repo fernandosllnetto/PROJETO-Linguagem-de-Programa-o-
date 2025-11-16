@@ -1,0 +1,43 @@
+package br.com.vidanimal.model;
+
+
+public class Animal {
+private Long id;
+private String nome;
+private String especie;
+private String raca;
+private int idade;
+private Tutor tutor; // pode ser null para animal institucional ou disponível
+private boolean disponivelParaAdocao;
+
+
+public Animal(Long id, String nome, String especie, String raca, int idade, Tutor tutor) {
+this.id = id;
+this.nome = nome;
+this.especie = especie;
+this.raca = raca;
+this.idade = idade;
+this.tutor = tutor;
+this.disponivelParaAdocao = false;
+}
+
+
+public Long getId() { return id; }
+public String getNome() { return nome; }
+public String getEspecie() { return especie; }
+public String getRaca() { return raca; }
+public int getIdade() { return idade; }
+public Tutor getTutor() { return tutor; }
+public boolean isDisponivelParaAdocao() { return disponivelParaAdocao; }
+
+
+public void setTutor(Tutor tutor) { this.tutor = tutor; }
+public void marcarDisponivel() { this.disponivelParaAdocao = true; }
+public void marcarIndisponivel() { this.disponivelParaAdocao = false; }
+
+
+@Override
+public String toString() {
+return "Animal{" + "id=" + id + ", nome='" + nome + '\'' + ", especie='" + especie + '\'' + '}';
+}
+}
